@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const [active, setActive] = useState("Home");
 
-  // 👉 আলাদা function
   const handleToggle = (name) => {
     setActive(name);
   };
@@ -29,44 +28,38 @@ const Navbar = () => {
 
         <div className="navbar-end gap-2">
           
-          <Link to={"/"}  >
-          <a
-            onClick={() => handleToggle("Home")}
+          <Link to={"/"}  onClick={() => handleToggle("Home")}
             className={`btn ${
               active === "Home"
                 ? "bg-[#244D3F] text-white"
                 : ""
-            }`}
-          ><FaHome className=' text-xl '/>
+            }`} >
+          <FaHome className=' text-xl '/>
             Home
-          </a>
+          
           </Link>
 
-          <Link to={"/timeline"} >
-            <a
-            onClick={() => handleToggle("Timeline")}
+          <Link to={"/timeline"} onClick={() => handleToggle("Timeline")}
             className={`btn ${
               active === "Timeline"
                 ? "bg-[#244D3F] text-white"
                 : ""
-            }`}
-          ><IoMdTime className='text-2xl'/>
+            }`} >
+            <IoMdTime className='text-2xl'/>
             Timeline
-          </a>
+          
           
           </Link>
 
-          <Link to={"/stats"}>
-          <a
-            onClick={() => handleToggle("Stats")}
+          <Link to={"/stats"} onClick={() => handleToggle("Stats")}
             className={`btn ${
               active === "Stats"
                 ? "bg-[#244D3F] text-white"
                 : ""
-            }`}
-          ><MdOutlineQueryStats className='text-2xl' />
+            }`}>
+          <MdOutlineQueryStats className='text-2xl' />
             Stats
-          </a>
+         
           
           </Link>
 
